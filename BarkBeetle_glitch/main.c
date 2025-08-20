@@ -15,22 +15,18 @@
 #pragma GCC optimize("O0")
 
 // This part is for illustrative
-// This glitch tree example is based on the example from https://github.com/hextreeio/rp2350-security-playground-demo/tree/main
+// This glitch tree example is based on the tutorial example from https://github.com/hextreeio/rp2350-security-playground-demo/tree/main
 // We set trigger pin at each target node and collect the first successful glitch parameter pair.
 // We collect all the pairs sequentially
 void __not_in_flash_func(glitch_path)()
 {
-	volatile register uint32_t label = 0;
-	volatile float features[5] = {100.0f, 62.0f, 20.0f, -0.92f, 30.0f};
+	uint32_t label = 0;
+	features[5] = {100.0f, 62.0f, 20.0f, -0.92f, 30.0f};
 	// bool glitch_detector_triggered = (powman_hw->chip_reset & 0x04000000) != 0;
-	uint32_t blink_status = 1;
-	
 
     if (features[0] < 129.0) {
-		delayNops(10);
 		gpio_put(TRIGGER2_PIN, 1);
         if (features[4] < 28.0) {
-			delayNops(10);
 			gpio_put(TRIGGER2_PIN, 0);
             if (features[2] < 30.16278) {
                 label = 0;
@@ -103,16 +99,6 @@ void __not_in_flash_func(glitch_path)()
 }
 #pragma GCC pop_options
 
-
-inline void delayNops(long nops)
-{
-    __asm__ volatile(
-    "L_%=_delayNops:"   "\n\t"
-    "subs   %0, #1"       "\n\t" // Subtract 1 from nops
-    "bne    L_%=_delayNops"   "\n" // Loop if nops is not zero
-    : "+r" (nops) :
-    );
-}
 
 int main()
 {
