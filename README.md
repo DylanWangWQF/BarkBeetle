@@ -1,6 +1,6 @@
 # BarkBeetle
 
-This repository contains the source code for the paper **[BarkBeetle: Stealing Decision Tree Models with Fault Injection](https://dl.acm.org/doi/10.1145/3779208.3785372)**, accepted for publication in **Proceedings of the ACM Asia Conference on Computer and Communications Security (ASIA CCS 2026)**.
+This repository contains the source code for the paper **[BarkBeetle: Stealing Decision Tree Models with Fault Injection](https://dl.acm.org/doi/10.1145/3779208.3785372)**, accepted for publication in *Proceedings of the ACM Asia Conference on Computer and Communications Security (ASIA CCS 2026)*.
 
 ## Proof-of-Concept Attack for BarkBeetle
 
