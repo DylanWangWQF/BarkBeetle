@@ -1,5 +1,7 @@
 # BarkBeetle
 
+This repository contains the source code for the paper **[BarkBeetle: Stealing Decision Tree Models with Fault Injection](https://dl.acm.org/doi/10.1145/3779208.3785372)**, accepted for publication in **Proceedings of the ACM Asia Conference on Computer and Communications Security (ASIA CCS 2026)**.
+
 ## Proof-of-Concept Attack for BarkBeetle
 
 We convert the BigML-generated trees into the Emlearn-compatible format and store them in `tree.c` under the `BarkBeetle_simulation` directory.
@@ -35,3 +37,23 @@ cp BarkBeetle.uf2 /media/adminlocal/RP2350 // the path for target RP2350 device
 ```
 After flashing the firmware, connect the Faultier board to your machine and use the Jupyter notebook to begin glitching the RP2350 target.
 The code for this part is available in `faultier_BarkBeetle.ipynb`.
+
+## Citations
+If you use `BarkBeetle` in an academic work, please reference it using:
+```
+@inproceedings{barkbeetle2026,
+  title={BarkBeetle: Stealing Decision Tree Models with Fault Injection},
+  author={Wang, Qifan and Sander, Jonas and Jiang, Minmin and Eisenbarth, Thomas and Oswald, David},
+  booktitle={Proceedings of the ACM Asia Conference on Computer and Communications Security},
+  series={ASIA CCS '26},
+  pages={343--357},
+  year={2026},
+  publisher={Association for Computing Machinery},
+  doi={10.1145/3779208.3785372}
+}
+```
+
+
+## Disclaimer
+
+This open source project is for proof of concept purposes only and should not be used in production environments. 
